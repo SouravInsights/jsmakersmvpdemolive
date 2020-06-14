@@ -73,7 +73,7 @@ const HeroSection = ({ children }) => {
                 top="228px"
                 size={["sm", "md", "lg", "xl", "2xl", "3xl", "4xl", "5xl", "6xl"]}
             >
-                <Image src="/MainBg.svg" />
+                <Image src="https://res.cloudinary.com/emishalabs/image/upload/v1592162413/JSMakers%20Assets/MainBG_lnbcua.svg" />
             </Box>
         </Grid>
     );
