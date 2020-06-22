@@ -5,7 +5,7 @@
 import { ThemeProvider, CSSReset } from '@chakra-ui/core';
 import { Global, css } from '@emotion/core';
 import customTheme from '@/styles/theme';
-import theme from 'styles/theme'
+import theme from 'styles/theme';
 
 const GlobalStyle = ({ children }) => {
   return (
@@ -22,6 +22,28 @@ const GlobalStyle = ({ children }) => {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+          }
+
+          /* width */
+          ::-webkit-scrollbar {
+            width: 20px;
+          }
+
+          /* Track */
+          ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 10px;
+          }
+
+          /* Handle */
+          ::-webkit-scrollbar-thumb {
+            background: #f9af1a;
+            border-radius: 10px;
+          }
+
+          /* Handle on hover */
+          ::-webkit-scrollbar-thumb:hover {
+            background: #ffcb1e;
           }
         `}
       />

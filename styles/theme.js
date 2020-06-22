@@ -1,8 +1,15 @@
 import React from 'react';
 import { theme } from '@chakra-ui/core';
 
+// const breakpoints = ['30em', '48em', '62em', '80em'];
+// breakpoints.sm = breakpoints[0];
+// breakpoints.md = breakpoints[1];
+// breakpoints.lg = breakpoints[2];
+// breakpoints.xl = breakpoints[3];
+
 const customTheme = {
   ...theme,
+  // breakpoints,
   font: {
     body: 'Inter, sans-serif',
     heading: 'Segoe UI, Segoe UI Symbol'
@@ -14,8 +21,9 @@ const customTheme = {
     lg: '18px',
     xl: '20px',
     '2xl': '22px',
-    '3xl': '70px',
-    '4xl': '82px'
+    '3xl': '48px',
+    '4xl': '70px',
+    '5xl': '82px'
   },
   fontWeight: {
     normal: 400,
@@ -55,7 +63,7 @@ const customTheme = {
       150: '#ffcb1e',
       180: '#FFCAD4'
     },
-    blue: '#0E39D0',
+    blue: '#0E39D0'
   },
   backgroundColor: {
     ...theme.backgroundColors,
