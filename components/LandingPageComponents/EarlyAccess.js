@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import {
   Box,
   Stack,
@@ -9,77 +10,88 @@ import {
   Text,
   Image,
   FormControl,
-  Input
+  Input,
+  PseudoBox
 } from '@chakra-ui/core';
+const EarlyAccessButton = motion.custom(PseudoBox);
+
 const EarlyAccess = ({ children }) => {
   return (
-    <Box background="#FFCB1E" borderRadius="20px" my="80px">
-      <Flex
-        flexDirection="column"
-        m={[1, 2, 3, 4]}
-        p={[1, 2, 3, 4]}
-        justify="center"
-        align="center"
+    <Flex
+      bg="yellow.150"
+      justify="center"
+      align="center"
+      flexDirection="column"
+      borderRadius="20px"
+      p="20px"
+      m="50px"
+    >
+      <Heading
+        fontWeight="extrabold"
+        lineHeight={['shorter', 'short', 'normal', 'base']}
+        fontSize={['lg', '2xl', '3xl']}
+        textAlign="center"
+        pb="10px"
       >
-        <Heading
-          fontWeight="extrabold"
-          lineHeight={['shorter', 'short', 'normal', 'base']}
-          fontSize={['lg', '2xl', '3xl']}
-          textAlign="center"
-        >
-          Join the community
-        </Heading>
-        <Text
-          fontWeight="normal"
-          lineHeight="shorter"
-          fontSize={['sm', 'lg', 'xl', '2xl']}
-          textAlign="center"
-          w={['80%', '50%']}
-          h={['10%', '50%']}
-        >
-          We can’t wait to see Awesome developers like you join the JS Makers
-          community. Until then, join the waitlist for the Beta.
-        </Text>
-      </Flex>
+        Join the community
+      </Heading>
+      <Text
+        fontWeight="normal"
+        lineHeight="shorter"
+        fontSize={['sm', 'lg', 'xl', '2xl']}
+        w={['80%', '50%']}
+        textAlign="center"
+        pb="20px"
+      >
+        We can’t wait to see Awesome developers like you join the JS Makers
+        community. Until then, join the waitlist for the Beta.
+      </Text>
+      {/* Early Access Button Section */}
       <Box
         d="flex"
         flexDirection={['column', 'column', 'row', 'row']}
-        w={['320px', '400px', '520px', '520px']}
         flex="1"
         py={2}
         px={4}
-        rounded="md"
         borderRadius="12px"
         mb="10px"
+        pb="10px"
         background="white"
         boxShadow="0px 20px 80px rgba(43, 41, 46, 0.4)"
+        textAlign="center"
       >
         <Box>
-          <Box
+          <PseudoBox
+            textAlign="center"
             as="input"
             placeholder="Your Email"
             type="email"
-            w="290px"
-            py={2}
-            px={4}
+            w="220px"
+            py={3}
+            px={5}
             rounded="md"
+            outline="none"
           />
-          <Box
+          <EarlyAccessButton
             as="button"
-            bg="#FFD64D"
+            bg="yellow.100"
             w="180px"
             py={2}
             px={4}
             ml={4}
             alignItems="center"
             borderRadius="12px"
+            whileHover={{ scale: 1.1 }}
             fontWeight="semibold"
+            outline="#FFD64D"
+            _hover={{ bg: 'yellow.150' }}
+            onSubmit
           >
             Get Early Access
-          </Box>
+          </EarlyAccessButton>
         </Box>
       </Box>
-    </Box>
+    </Flex>
   );
 };
 export default EarlyAccess;

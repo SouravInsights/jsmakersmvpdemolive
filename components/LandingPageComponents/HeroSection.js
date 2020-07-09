@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import {
   Box,
   Heading,
@@ -10,8 +11,8 @@ import {
   PseudoBox,
   Stack
 } from '@chakra-ui/core';
-import NavBar from '../NavBar';
 
+const HeroSectionButton = motion.custom(PseudoBox);
 const HeroSection = ({ children }) => {
   return (
     <>
@@ -50,7 +51,7 @@ const HeroSection = ({ children }) => {
                 Community{' '}
               </Heading>
 
-              <Text fontSize="2xl">
+              <Text fontSize="2xl" p="10px">
                 {' '}
                 We love
                 <Text d="inline" color="yellow.150">
@@ -60,7 +61,7 @@ const HeroSection = ({ children }) => {
                 like you and we believe, the most successful developers share
                 more than what they take. &hearts;
               </Text>
-              <AvatarGroup size="md" max={4}>
+              <AvatarGroup size="md" max={4} p="10px">
                 <Avatar
                   name="Ryan Florence"
                   src="https://bit.ly/ryan-florence"
@@ -108,38 +109,40 @@ const HeroSection = ({ children }) => {
               flex="1"
               py={2}
               px={4}
-              rounded="md"
-              bg="gray.100"
-              boxShadow="0px 20px 80px rgba(43, 41, 46, 0.3)"
+              borderRadius="12px"
+              mb="10px"
+              background="white"
+              boxShadow="0px 20px 80px rgba(43, 41, 46, 0.4)"
+              textAlign="center"
             >
-              <Box textAlign="center">
-                <Box
+              <Box>
+                <PseudoBox
+                  textAlign="center"
                   as="input"
                   placeholder="Your Email"
                   type="email"
                   w="290px"
-                  py={2}
-                  px={4}
+                  py={3}
+                  px={5}
                   rounded="md"
-                  bg="gray.100"
-                  textAlign="center"
-                  _hover={{ bg: 'gray.200' }}
+                  outline="none"
                 />
-                <Box
+                <HeroSectionButton
                   as="button"
-                  bg="#FFD64D"
+                  bg="yellow.100"
                   w="180px"
                   py={2}
                   px={4}
-                  ml={3}
+                  ml={4}
                   alignItems="center"
-                  rounded="md"
+                  borderRadius="12px"
+                  whileHover={{ scale: 1.1 }}
                   fontWeight="semibold"
-                  color="black"
-                  _hover={{ bg: 'teal.600' }}
+                  outline="#FFD64D"
+                  _hover={{ bg: 'yellow.150' }}
                 >
                   Get Early Access
-                </Box>
+                </HeroSectionButton>
               </Box>
             </Box>
           </Stack>

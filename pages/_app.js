@@ -6,6 +6,7 @@ import { ThemeProvider, CSSReset } from '@chakra-ui/core';
 import { Global, css } from '@emotion/core';
 import customTheme from '@/styles/theme';
 import theme from 'styles/theme';
+import NavBar from '@/components/NavBar'
 
 const GlobalStyle = ({ children }) => {
   return (
@@ -47,6 +48,7 @@ const GlobalStyle = ({ children }) => {
           }
         `}
       />
+      <NavBar />
       {children}
     </>
   );

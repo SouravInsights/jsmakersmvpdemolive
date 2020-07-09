@@ -3,33 +3,36 @@ import ReactDOM from 'react-dom';
 import { Box, Flex, Button, Heading, Link, Image, List } from '@chakra-ui/core';
 
 const NavLink = ({ children, ...props }) => (
-  <Link px={4} fontWeight="medium" color="gray.50" {...props} display="block">
+  <Link mt={{ base: 4, md: 0 }} mr={6} display="block" fontSize={"xl"} fontWeight="medium" lineHeight="xl" color="gray.50" {...props}>
     {children}
   </Link>
 );
 
-const NavBar = () => {
+const NavBar = props => {
   const [show, setShow] = React.useState(false);
   const handleToggle = () => setShow(!show);
   return (
     <Flex
-      position="-webkit-sticky"
       as="nav"
       w="90%"
-      mx="50"
+      mx="auto"
+      my="60px"
       align="center"
       justify="space-between"
-      flexWrap="wrap"
+      wrap="wrap"
       padding="1rem"
       bg="white"
+      position="sticky"
+      top="0"
       color="gray.50"
       border="1px solid #F2F4F8"
       borderRadius="20px"
       boxShadow="0px 20px 30px rgba(139, 142, 149, 0.05);"
-      height="80px"
-      marginTop={['20vh', '20vh', '0px', '0px']}
+      height={["auto", "auto", "80px", "80px"]}
+      zIndex="100"
+      {...props}
     >
-      <Box flexDirection="row" align="center">
+      <Flex mr={5} align="center">
         <Heading as="h1" size="lg">
           <Image
             position="relative"
@@ -39,8 +42,8 @@ const NavBar = () => {
             margin="auto"
           />
         </Heading>
-      </Box>
-      <Box display={{ md: 'none' }} onClick={handleToggle}>
+      </Flex>
+      <Box display={{ sm: "block", md: "none" }} onClick={handleToggle}>
         <svg
           width="32"
           height="21"
@@ -64,19 +67,21 @@ const NavBar = () => {
       </Box>
 
       <Box
-        width={{ sm: 'full', md: 'auto' }}
-        display={{ xs: show ? 'block' : 'none', md: 'flex' }}
+        display={{ sm: show ? "block" : "none", md: "flex" }}
+        width={{ sm: "full", md: "auto" }}
+        alignItems="center"
       >
         <NavLink href="">Home</NavLink>
         <NavLink href="about">Challenges</NavLink>
         <NavLink href="about">About</NavLink>
       </Box>
-
+      {/*
       <Box display={{ sm: show ? 'block' : 'none', md: 'block' }}>
         <Button bg="transparent" border="1px">
           Create account
         </Button>
       </Box>
+      */}
     </Flex>
   );
 };

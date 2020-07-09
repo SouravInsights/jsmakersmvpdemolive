@@ -1,43 +1,79 @@
 import React from 'react';
-import { Box, Grid, Text, Image } from '@chakra-ui/core';
+import {
+  Box,
+  Grid,
+  Text,
+  Image,
+  Heading,
+  Flex,
+  List,
+  ListItem,
+  ListIcon
+} from '@chakra-ui/core';
+import {
+  FaFacebook,
+  FaTwitter,
+  FaDribbble,
+  FaGithub,
+  FaLinkedin
+} from 'react-icons/fa';
 
 const FooterSection = ({ children }) => {
   return (
-    <Grid>
-      <Box w="100%">
-        <Box
-          position="absolute"
-          width="212px"
-          height="68px"
-          left="124px"
-          top="3380px"
-        >
-          <Image src="/logo.png" />
+    <Flex
+      flexWrap="wrap"
+      justifyContent={['center', 'center', 'space-between', 'space-between']}
+      alignItems="center"
+      h="200px"
+      w="100%"
+      bg="#F8F8F8"
+      padding="10px"
+      paddingX={['0px', '0px', '50px', '50px']}
+    >
+      <Box display="flex" flexDirection="column">
+        <Box d={['none', 'none', 'block', 'block']} marginBottom="8px">
+          <Image src="/logo.svg" h="60px" w="160px" />
         </Box>
-        <Text
-          position="absolute"
-          width="360px"
-          height="22px"
-          left="124px"
-          top="3464px"
-          fontSize="lg"
-          fontWeight="bold"
-        >
-          “A community for JavaScript Developers.”
+        <Text as="b" fontSize="lg" d={['none', 'none', 'none', 'inline']}>
+          &ldquo; A community for JavaScript Developers. &rdquo;
         </Text>
-        <Text
-          position="absolute"
-          width="375px"
-          height="21px"
-          left="941px"
-          top="3464px"
-          fontSize="md"
-          fontWeight="bold"
-        >
+      </Box>
+
+      <Box display="flex" flexDirection="column" alignItems="center">
+        <Box w={['300px', '350px', '400px', '500px']} textAlign="center">
+          <List d="flex" justifyContent="space-around">
+            <ListItem d="inline-block" cursor="pointer">
+              <ListIcon>
+                <FaFacebook size="2em" />
+              </ListIcon>
+            </ListItem>
+            <ListItem d="inline-block" cursor="pointer">
+              <ListIcon>
+                <FaTwitter size="2em" />
+              </ListIcon>
+            </ListItem>
+            <ListItem d="inline-block" cursor="pointer">
+              <ListIcon>
+                <FaDribbble size="2em" />
+              </ListIcon>
+            </ListItem>
+            <ListItem d="inline-block" cursor="pointer">
+              <ListIcon>
+                <FaGithub size="2em" />
+              </ListIcon>
+            </ListItem>
+            <ListItem d="inline-block" cursor="pointer">
+              <ListIcon>
+                <FaLinkedin size="2em" />
+              </ListIcon>
+            </ListItem>
+          </List>
+        </Box>
+        <Text as="b" fontSize={['sm', 'sm', 'lg', 'lg']}>
           Copyright @ 2020 JS Makers, all rights Reserved.
         </Text>
       </Box>
-    </Grid>
+    </Flex>
   );
 };
 export default FooterSection;

@@ -1,24 +1,13 @@
-import React from 'react';
-import {
-  Box,
-  Heading,
-  Button,
-  Flex,
-  Grid,
-  Text,
-  Image,
-  Avatar,
-  AvatarBadge,
-  Link,
-  Stack
-} from '@chakra-ui/core';
+import React from "react";
+import { Box, Heading, Flex, Text, Image, Link } from "@chakra-ui/core";
+import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 
-const Articlesection = ({ children }) => {
+const ArticleSection = ({ children }) => {
   return (
     <Box>
       <Flex align="center" justify="center" flexDirection="column">
         <Heading
-          fontSize={['lg', 'xl', '3xl']}
+          fontSize={["2xl", "4xl", "5xl", "5xl"]}
           fontWeight="extrabold"
           mt="70px"
           textAlign="center"
@@ -29,295 +18,204 @@ const Articlesection = ({ children }) => {
         </Heading>
         <Text
           textAlign="center"
-          fontSize={['md', 'lg', 'xl', '2xl']}
+          fontSize={["md", "lg", "xl", "2xl"]}
+          size={["80%", "70%", "60%", "40%"]}
           mt="15px"
-          size={['80%', '70%', '60%', '40%']}
         >
           Successful developers have the passion and the confidence to document
           their knowledge and share stuff what they think is cool.
         </Text>
+      </Flex>
 
+      {/* Card Section Start */}
+      <Flex
+        align="center"
+        justify="center"
+        flexDirection={["column", "column", "column", "row"]}
+        py={["60px", "60px", "80px", "100px"]}
+      //overflowX="scroll"
+      //overflowY="hidden"
+      >
+        {/* Card 1 Start */}
         <Box
+          d="flex"
           position="relative"
-          d="inline-block"
-          w="80vw"
-          h="370px"
-          justifyContent="space-between"
-          overflow="auto"
-          whiteSpace="nowrap"
+          w={["320px", "320px", "320px", "320px"]}
+          h={["320px", "320px", "320px", "320px"]}
+          bg="#FFCB1E"
+          borderRadius="5px"
+          mx="40px"
+          my="20px"
+          borderLeft="5px solid"
+          borderColor="yellow.200"
+          transform={["none", "none", "none", "rotate(-20deg)"]}
         >
-          <Box
-            position="relative"
-            w={['230px', '300px', '300px', '300px']}
-            h="300px"
-            bg="#FFCB1E"
-            d="inline-block"
-            borderRadius="5px"
-            margin="10px"
-            borderLeft="5px solid #F9AF1A"
-          >
-            <Box
-              position="absolute"
-              w="90px"
-              h="90px"
-              rounded="50%"
-              border="3px solid #F9AF1A"
-              left="20px"
-              top="20px"
-              bg="white"
-            >
-              <Image src="/profileimg.jpg" rounded="50%" />
-            </Box>
-            <Box position="absolute" top="120px" margin="20px">
-              <Heading position="absolute" size="sm">
-                Addy Osmani - Google
-              </Heading>
-              <Box
-                position="absolute"
-                w={['190px', '250px', '250px', '250px']}
-                h="120px"
-                top="30px"
-                fontSize="sm"
-                whiteSpace="pre-line"
-              >
-                <Text>
-                  Write about what you learn. It pushes you to understand topics
-                  better. It's OK if no one reads what you write. You get a lot
-                  out of just doing it for YOU.
-                </Text>
-              </Box>
-            </Box>
+          {/* Author Pic */}
+          <Box position="absolute" m="20px">
+            <Image
+              src="https://pbs.twimg.com/profile_images/1268900195544248322/U4lnYGdi_400x400.jpg"
+              rounded="full"
+              size={["80px", "80px", "80px", "80px"]}
+            />
+          </Box>
 
-            <Box
-              position="absolute"
-              right="20px"
-              top="20px"
-              h="20px"
-              w="20px"
-              bg="balck"
-            >
-              <Image src="link_icon.png" />
+          <Box position="absolute" top="110px" my="10px" mx="20px">
+            {/* Author name and work */}
+            <Heading fontSize={["sm", "sm", "md", "md"]}>
+              Siddharth - CodeSandBox
+            </Heading>
+
+            {/* Author Quote */}
+            <Box top="40px">
+              <Text fontSize={["sm", "sm", "sm", "sm"]} fontWeight="normal">
+                <Text as="span" mt="8px" color="yellow.200">
+                  <FaQuoteLeft size="1.2em" />
+                </Text>
+                Sharing ideas, unselfishly, I like more people working/exploring
+                the same ideas that I'm working on. It makes it more fun.
+                Selfishly, explaining a concept helps me understand it better
+                and makes me feel smart.
+                <Text as="span" color="yellow.200">
+                  <FaQuoteRight size="1em" />
+                </Text>
+              </Text>
             </Box>
           </Box>
 
-          <Box
-            position="relative"
-            w={['230px', '300px', '300px', '300px']}
-            h="300px"
-            bg="#E6375A"
-            d="inline-block"
-            borderRadius="5px"
-            margin="10px"
-            borderLeft="5px solid #D12245"
-          >
-            <Box
-              position="absolute"
-              w="90px"
-              h="90px"
-              rounded="50%"
-              border="3px solid #D12245"
-              left="20px"
-              top="20px"
-              bg="white"
+          {/* Author Quote Source*/}
+          <Box position="absolute" right="20px" top="20px" h="20px" w="20px">
+            <Link
+              href="https://twitter.com/siddharthkp/status/1262260552237187074"
+              isExternal
             >
-              <Image src="/profileimg.jpg" rounded="50%" />
-            </Box>
-            <Box position="absolute" top="120px" margin="20px">
-              <Heading position="absolute" size="sm">
-                Addy Osmani - Google
-              </Heading>
-              <Box
-                position="absolute"
-                w={['190px', '250px', '250px', '250px']}
-                h="120px"
-                top="30px"
-                fontSize="sm"
-                whiteSpace="pre-line"
-              >
-                <Text>
-                  Write about what you learn. It pushes you to understand topics
-                  better. It's OK if no one reads what you write. You get a lot
-                  out of just doing it for YOU.
-                </Text>
-              </Box>
-            </Box>
-
-            <Box
-              position="absolute"
-              right="20px"
-              top="20px"
-              h="20px"
-              w="20px"
-              bg="balck"
-            >
-              <Image src="link_icon.png" />
-            </Box>
-          </Box>
-
-          <Box
-            position="relative"
-            w={['230px', '300px', '300px', '300px']}
-            h="300px"
-            bg="#4799EB"
-            d="inline-block"
-            borderRadius="5px"
-            margin="10px"
-            borderLeft="5px solid #2A7CCE"
-          >
-            <Box
-              position="absolute"
-              w="90px"
-              h="90px"
-              rounded="50%"
-              border="3px solid #2A7CCE"
-              left="20px"
-              top="20px"
-              bg="white"
-            >
-              <Image src="/profileimg.jpg" rounded="50%" />
-            </Box>
-            <Box position="absolute" top="120px" margin="20px">
-              <Heading position="absolute" size="sm">
-                Addy Osmani - Google
-              </Heading>
-              <Box
-                position="absolute"
-                w={['190px', '250px', '250px', '250px']}
-                h="120px"
-                top="30px"
-                fontSize="sm"
-                whiteSpace="pre-line"
-              >
-                <Text>
-                  Write about what you learn. It pushes you to understand topics
-                  better. It's OK if no one reads what you write. You get a lot
-                  out of just doing it for YOU.
-                </Text>
-              </Box>
-            </Box>
-
-            <Box
-              position="absolute"
-              right="20px"
-              top="20px"
-              h="20px"
-              w="20px"
-              bg="balck"
-            >
-              <Image src="link_icon.png" />
-            </Box>
-          </Box>
-
-          <Box
-            position="relative"
-            w={['230px', '300px', '300px', '300px']}
-            h="300px"
-            bg="#2ecc71"
-            d="inline-block"
-            borderRadius="5px"
-            margin="10px"
-            borderLeft="5px solid #27ae60"
-          >
-            <Box
-              position="absolute"
-              w="90px"
-              h="90px"
-              rounded="50%"
-              border="3px solid #27ae60"
-              left="20px"
-              top="20px"
-              bg="white"
-            >
-              <Image src="/profileimg.jpg" rounded="50%" />
-            </Box>
-            <Box position="absolute" top="120px" margin="20px">
-              <Heading position="absolute" size="sm">
-                Addy Osmani - Google
-              </Heading>
-              <Box
-                position="absolute"
-                w={['190px', '250px', '250px', '250px']}
-                h="120px"
-                top="30px"
-                fontSize="sm"
-                whiteSpace="pre-line"
-              >
-                <Text>
-                  Write about what you learn. It pushes you to understand topics
-                  better. It's OK if no one reads what you write. You get a lot
-                  out of just doing it for YOU.
-                </Text>
-              </Box>
-            </Box>
-
-            <Box
-              position="absolute"
-              right="20px"
-              top="20px"
-              h="20px"
-              w="20px"
-              bg="balck"
-            >
-              <Image src="link_icon.png" />
-            </Box>
-          </Box>
-
-          <Box
-            position="relative"
-            w={['230px', '300px', '300px', '300px']}
-            h="300px"
-            bg="#9b59b6"
-            d="inline-block"
-            borderRadius="5px"
-            margin="10px"
-            borderLeft="5px solid #8e44ad"
-          >
-            <Box
-              position="absolute"
-              w="90px"
-              h="90px"
-              rounded="50%"
-              border="3px solid #8e44ad"
-              left="20px"
-              top="20px"
-              bg="white"
-            >
-              <Image src="/profileimg.jpg" rounded="50%" />
-            </Box>
-            <Box position="absolute" top="120px" margin="20px">
-              <Heading position="absolute" size="sm">
-                Addy Osmani - Google
-              </Heading>
-              <Box
-                position="absolute"
-                w={['190px', '250px', '250px', '250px']}
-                h="120px"
-                top="30px"
-                fontSize="sm"
-                whiteSpace="pre-line"
-              >
-                <Text>
-                  Write about what you learn. It pushes you to understand topics
-                  better. It's OK if no one reads what you write. You get a lot
-                  out of just doing it for YOU.
-                </Text>
-              </Box>
-            </Box>
-
-            <Box
-              position="absolute"
-              right="20px"
-              top="20px"
-              h="20px"
-              w="20px"
-              bg="balck"
-            >
-              <Image src="link_icon.png" />
-            </Box>
+              <Image src="https://uploads.codesandbox.io/uploads/user/494356db-302f-42b1-94bf-11db031a5d4f/jbUa-link_icon.png" />
+            </Link>
           </Box>
         </Box>
+        {/* Card 1 End */}
+
+        {/* Card 2 Start */}
+        <Box
+          d="flex"
+          position="relative"
+          color="white"
+          w={["320px", "320px", "320px", "320px"]}
+          h={["320px", "320px", "320px", "320px"]}
+          bg="red.50"
+          borderRadius="5px"
+          mx="40px"
+          my="20px"
+          borderLeft="5px solid"
+          borderColor="red.100"
+        >
+          {/* Author Pic */}
+          <Box position="absolute" mx="20px" my="20px">
+            <Image
+              src="https://pbs.twimg.com/profile_images/759557613445001216/6M2E1l4q_400x400.jpg"
+              rounded="full"
+              size={["80px", "80px", "80px", "80px"]}
+            />
+          </Box>
+
+          <Box position="absolute" top="110px" my="10px" mx="20px">
+            {/* Author name and work */}
+            <Heading fontSize={["md", "md", "md", "md"]}>Kent C. Dodds</Heading>
+            {/* Author Quote */}
+            <Box my="8px">
+              <Text fontSize={["sm", "sm", "sm", "sm"]} fontWeight="normal">
+                <Text as="span" mt="8px" color="red.100">
+                  <FaQuoteLeft size="1.2em" />
+                </Text>
+                Why I write is largely because I can avoid answering the same
+                question over and over again. It's also a big contributor to
+                people's perception of my authority as a content creator so when
+                I have something to sell, people buy.
+                <Text as="span" color="red.100">
+                  <FaQuoteRight size="1.2em" />
+                </Text>
+              </Text>
+            </Box>
+          </Box>
+
+          {/* Author Quote Source */}
+          <Box position="absolute" right="20px" top="20px" h="20px" w="20px">
+            <Link
+              href="https://twitter.com/kentcdodds/status/1262358130668650497"
+              isExternal
+            >
+              <Image src="https://uploads.codesandbox.io/uploads/user/494356db-302f-42b1-94bf-11db031a5d4f/jbUa-link_icon.png" />
+            </Link>
+          </Box>
+        </Box>
+        {/* Card 2 End */}
+
+        {/* Card 3 Start */}
+        <Box
+          d="flex"
+          position="relative"
+          color="white"
+          w={["320px", "320px", "320px", "320px"]}
+          h={["320px", "320px", "320px", "320px"]}
+          bg="blue.50"
+          borderRadius="5px"
+          mx="40px"
+          my="20px"
+          borderLeft="5px solid"
+          borderColor="blue.100"
+          transform={["none", "none", "none", "rotate(20deg)"]}
+        >
+          {/* Author Pic */}
+          <Box position="absolute" mx="20px" my="20px">
+            <Image
+              src="https://pbs.twimg.com/profile_images/715433404100059137/AYjfw8tH_400x400.jpg"
+              rounded="full"
+              size={["80px", "80px", "80px", "80px"]}
+            />
+          </Box>
+
+          <Box position="absolute" top="110px" my="10px" mx="20px">
+            {/* Author name and work */}
+            <Heading fontSize={["sm", "lg", "md", "md"]}>
+              Jason Lengstorf
+            </Heading>
+
+            {/* Author Quote */}
+            <Box top="30px">
+              <Text fontSize={["sm", "sm", "sm", "sm"]} fontWeight="normal">
+                <Text as="span" mt="8px" color="blue.100">
+                  <FaQuoteLeft size="1.2em" />
+                </Text>
+                I write because it's fun, mostly Smiling face with open mouth
+                and cold sweat I like to work through metaphors and analogies to
+                break topics down in ways that make them more approachable.
+                <Text as="span" color="blue.100">
+                  <FaQuoteRight size="1.2em" />
+                </Text>
+              </Text>
+            </Box>
+          </Box>
+
+          {/* Author Quote End*/}
+          <Box
+            position="absolute"
+            right="20px"
+            top="20px"
+            h="20px"
+            w="20px"
+            bg="balck"
+          >
+            <Link
+              href="https://twitter.com/jlengstorf/status/1262368705775714305"
+              isExternal
+            >
+              <Image src="https://uploads.codesandbox.io/uploads/user/494356db-302f-42b1-94bf-11db031a5d4f/jbUa-link_icon.png" />
+            </Link>
+          </Box>
+        </Box>
+        {/* Card 3 End */}
       </Flex>
+      {/* Card End */}
     </Box>
   );
 };
-export default Articlesection;
+export default ArticleSection;
