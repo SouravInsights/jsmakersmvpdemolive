@@ -14,7 +14,7 @@
     "emotion-theming": "^10.0.27",
     "firebase": "^7.14.6",
     "framer-motion": "^1.11.1",
-    "next": "^9.3.3",
+    "next": "^13.0.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-hook-form": "^5.7.2",
